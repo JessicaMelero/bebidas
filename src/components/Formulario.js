@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {CategoriasContext} from '../context/CategoriasContext';
+
 const Formulario = ({}) => {
+
+  const {hola} = useContext(CategoriasContext);
+
+  alert(hola)
+
   return (
-    <form className="col-12 mt-4">
+    <form className="col-12">
       <fieldset className="text-center">
         <legend>Busca bebidas por categoría o ingrediente</legend>
       </fieldset>
-      <div className="row">
+      <div className="row  mt-4">
         <div className="col-md-4">
           <input
             name="nombre"
@@ -14,6 +21,7 @@ const Formulario = ({}) => {
             placeholder="Buscar por ingrediente"
           />
         </div>
+
         <div className="col-md-4">
           <select
             className="form-control"
